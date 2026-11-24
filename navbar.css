@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'myfont';
+    src: url('/static/fonts/Inter-18pt-Black.woff2') format('woff2');
+}
+
+body {
+    padding: 40px;
+    min-height: 100vh;
+    background: linear-gradient(rgba(11, 14, 20, 0.743), rgba(11, 14, 20, 0.73)), url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'myfont', sans-serif;
+}
+
+@keyframes fadeUpIn {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal-up {
+    opacity: 0;
+    animation: fadeUpIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+nav {
+    font-family: 'myfont', sans-serif;
+    background-color: transparent;
+    position: absolute;
+}
+
+.navbar-left {
+    color: #121722;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(15, 23, 42, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(14px);
+    position: fixed;
+    top: 40px;
+    left: 40px;
+}
+
+.navbar-left img {
+    border-radius: 10px;
+    width: 40px;
+    box-shadow: 0 0 10px blue;
+}
+
+.navbar-left .home {
+    display: flex;
+    padding-bottom: 20px;
+    gap: 15px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+    width: 250px;
+}
+
+.navbar-left .hometext {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.navbar-left .hometext h4 {
+    color: white;
+}
+
+.navbar-left .hometext h6 {
+    font-size: 13px;
+    color: #01f7a1;
+    width: 50px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #06ef9e40;
+    border: 1px solid #01f7a1;
+}
+
+.category {
+    display: flex;
+    padding-top: 24px;
+    color: white;
+    flex-direction: column;
+    font-size: 18px;
+    gap: 14px;
+}
+
+.category p {
+    gap: 30px;
+}
+
+.category a {
+    text-decoration: none;
+    color: white;
+}
+
+.categorytext {
+    width: 280px;
+    height: 50px;
+    padding-left: 12px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    transition: 0.6s;
+}
+
+.categorytext:hover {
+    background-color: rgba(148, 163, 184, 0.2);
+}

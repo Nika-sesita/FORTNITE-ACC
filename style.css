@@ -20,6 +20,22 @@ body {
     font-family: 'myfont', sans-serif;
 }
 
+@keyframes fadeUpIn {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal-up {
+    opacity: 0;
+    animation: fadeUpIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
 nav {
     font-family: 'myfont', sans-serif;
     background-color: transparent;
@@ -83,7 +99,7 @@ nav {
     color: white;
     flex-direction: column;
     font-size: 18px;
-    gap: 14px;
+    gap: 10px;
 }
 
 .category p {
@@ -97,7 +113,7 @@ nav {
 
 .categorytext {
     width: 280px;
-    height: 50px;
+    height: 46px;
     padding-left: 12px;
     justify-content: center;
     display: flex;
@@ -123,6 +139,7 @@ nav {
     height: 350px;
     background-color: transparent;
     color: white;
+    animation-delay: 0.08s;
 }
 
 .hero h1 {
@@ -161,6 +178,7 @@ nav {
     padding-inline: 10px;
     padding-block: 4px;
     font-size: 12px;
+    backdrop-filter: blur(8px);
 }
 
 .blue {
@@ -213,6 +231,7 @@ nav {
     background: rgba(15, 23, 42, 0.42);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(12px);
+    animation-delay: 0.16s;
 }
 
 .filter-tabs {
@@ -305,6 +324,12 @@ nav {
     border-color: rgba(96, 165, 250, 0.35);
     background: rgba(15, 23, 42, 0.48);
 }
+
+.container .card:nth-child(1) { animation-delay: 0.22s; }
+.container .card:nth-child(2) { animation-delay: 0.28s; }
+.container .card:nth-child(3) { animation-delay: 0.34s; }
+.container .card:nth-child(4) { animation-delay: 0.40s; }
+.container .card:nth-child(5) { animation-delay: 0.46s; }
 
 .banner {
     padding: 16px;
@@ -410,4 +435,148 @@ nav {
 .buy-btn:hover {
     background: #1d4ed8;
     transform: translateY(-1px);
+}
+
+/* რეგისტრაციის გვერდის სტილები */
+.auth-wrapper {
+    margin-left: 350px;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 460px;
+    padding: 32px;
+    border-radius: 26px;
+    background: rgba(15, 23, 42, 0.42);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.auth-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.auth-header h2 {
+    font-size: 28px;
+}
+
+.auth-header h2 span {
+    color: #4f8ef7;
+}
+
+.auth-header p {
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: border-color 0.2s ease;
+}
+
+.input-field:focus-within {
+    border-color: rgba(96, 165, 250, 0.55);
+}
+
+.input-field i {
+    color: #60a5fa;
+    font-size: 14px;
+}
+
+.input-field input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.input-field input::placeholder {
+    color: #64748b;
+}
+
+.auth-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #cbd5e1;
+}
+
+.auth-check input[type="checkbox"] {
+    accent-color: #2563eb;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.auth-submit {
+    margin-top: 4px;
+    padding: 13px;
+    border: none;
+    border-radius: 12px;
+    background: #2563eb;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.auth-submit:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.auth-footer {
+    text-align: center;
+    font-size: 13px;
+    color: #94a3b8;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.auth-footer a {
+    color: #60a5fa;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
 }

@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.featured {
+    margin-left: 350px;
+
+    align-items: center;
+    gap: 24px;
+    padding: 30px;
+    border-radius: 16px;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    height: 170px;
+    background-color: rgba(22, 27, 41, 0.85);
+    color: white;
+    animation-delay: 0.08s;
+
+}
+
+.featured p:nth-child(1) {
+    color: rgb(203, 168, 245);
+    padding-inline: 20px;
+    border-radius: 20px;
+
+    width: 270px;
+    background-color: rgba(38, 30, 56, 0.85);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+}
+
+.featured .text {
+    padding-top: 40px;
+    font-size: 15px;
+}
+
+.container {
+    position: relative;
+    margin-left: 350px;
+    padding-top: 30px;
+    color: white;
+    display: flex;
+    gap: 30px;
+}
+
+.card {
+    width: 800px;
+    height: 250px;
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    padding: 30px;
+    border-radius: 20px;
+    .texrcard{
+        display: flex;
+        flex-direction: column;
+        border-bottom: 3px solid rgba(255, 255, 255, 0.08);
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+.container .card:nth-child(2){
+    border: 1px solid rgb(147, 197, 253);
+}
+
+.pirvelixazi {
+    display: flex;
+    justify-content: space-between;
+
+    .save {
+        background-color: rgba(203, 168, 245, 0.188);;
+        color: rgb(203, 168, 245);
+        font-size: 15px;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        padding-inline: 20px;
+        border: 2px solid rgba(168, 85, 247, 0.35);
+        border-radius: 20px;
+
+    }
+    .tounament{
+         background-color: rgba(30, 58, 138, 0.45);
+        color:rgb(147, 197, 253);
+        font-size: 15px;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        padding-inline: 20px;
+        border: 2px solid rgba(147, 197, 253, 0.25);
+        border-radius: 20px;
+    }
+    
+    p {
+        color: #34D399  ;
+    }
+}
