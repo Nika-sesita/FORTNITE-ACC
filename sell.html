@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DROPZONE</title>
     <link rel="shortcut icon" href="/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
         integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-        <link rel="stylesheet" href="featured.css">
-        <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="sell.css">
+    <link rel="stylesheet" href="navbar.css">
 </head>
+
 <body>
     <nav>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <div class="navbar-left">
             <div class="home">
                 <div class="hometext">
@@ -22,19 +25,125 @@
                         <h6>LIVE</h6>
                     </div>
                 </div>
+                <label for="menu-toggle" class="burger-btn" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
             </div>
             <div class="category">
-                <div class="categorytext"><a href="index.html"><p><i class="fa-solid fa-store"></i> Marketplace</p></a></div>
-                <div class="categorytext"><a href="featured.html"><p><i class="fa-solid fa-layer-group"></i> Featured Bundles</p></a></div>
-                <div class="categorytext"><a href="sell.html"><p><i class="fa-solid fa-tag"></i> Sell Account</p></a></div>
-                <div class="categorytext"><a href="buy.html"><p><i class="fa-solid fa-star"></i> Buyer Reviews</p></a></div>
-                <div class="categorytext"><a href="how.html"><p><i class="fa-solid fa-route"></i> How It Works</p></a></div>
-                <div class="categorytext"><a href="safety.html"><p><i class="fa-solid fa-shield-halved"></i> Safety & Warranty</p></a></div>
-                <div class="categorytext"><a href="faq.html"><p><i class="fa-solid fa-circle-question"></i> FAQ</p></a></div>
-                <div class="categorytext"><a href="support.html"><p><i class="fa-solid fa-headset"></i> Support</p></a></div>
+                <div class="categorytext">
+                    <a href="index.html">
+                        <p><i class="fa-solid fa-store"></i> Marketplace</p>
+                    </a>
+                </div>
+                <div class="categorytext">
+                    <a href="featured.html">
+                        <p><i class="fa-solid fa-layer-group"></i> Featured Bundles</p>
+                    </a>
+                </div>
+                <div class="categorytext">
+                    <a href="sell.html">
+                        <p><i class="fa-solid fa-tag"></i> Sell Account</p>
+                    </a>
+                </div>
+                <div class="categorytext">
+                    <a href="buy.html">
+                        <p><i class="fa-solid fa-star"></i> Buyer Reviews</p>
+                    </a>
+                </div>
+                <div class="categorytext">
+                    <a href="how.html">
+                        <p><i class="fa-solid fa-route"></i> How It Works</p>
+                    </a>
+                </div>
+                <div class="categorytext">
+                    <a href="safety.html">
+                        <p><i class="fa-solid fa-shield-halved"></i> Safety &amp; Warranty</p>
+                    </a>
+                </div>
+                <div class="categorytext">
+                    <a href="faq.html">
+                        <p><i class="fa-solid fa-circle-question"></i> FAQ</p>
+                    </a>
+                </div>
+                <div class="categorytext">
+                    <a href="support.html">
+                        <p><i class="fa-solid fa-headset"></i> Support</p>
+                    </a>
+                </div>
+                <div class="categorytext">
+                    <a href="register.html">
+                        <p><i class="fa-solid fa-user-plus"></i> Register</p>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
-    
+
+    <div class="container">
+        <div class="card reveal-right">
+            <div class="pirveliteqsti">
+                <p><i class="fa-solid fa-tag"></i> INSTANT PAYOUTS</p>
+            </div>
+
+            <div class="title">
+                <h1>Sell Your Fortnite Account</h1>
+                <p>Submit your locker details for an instant valuation. Verified sellers receive payouts via Card, Bank
+                    <br> Transfer, or Crypto within 30 minutes.
+                </p>
+            </div>
+
+            <div class="inputs">
+                <div class="inp1">
+                    <div class="field">
+                        <p>TOTAL SKINS COUNT</p>
+                        <input type="number" placeholder="e.g. 150" min="0" step="1">
+                    </div>
+                    <div class="field">
+                        <p>ASKING PRICE (USD)</p>
+                        <input type="text" placeholder="e.g. 75">
+                    </div>
+                </div>
+
+                <div class="inp2">
+                    <div class="field">
+                        <p>PRIMARY PLATFORM</p>
+                        <select>
+                            <option value="pc">PC / Epic Games (Full Access)</option>
+                            <option value="psn">PlayStation (PSN)</option>
+                            <option value="xbox">Xbox</option>
+                            <option value="switch">Nintendo Switch</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <p>CONTACT EMAIL / DISCORD</p>
+                        <input type="text" placeholder="seller@email.com or username#0001">
+                    </div>
+                </div>
+
+                <div class="inp3">
+                    <div class="field">
+                        <p>RARE SKINS &amp; HIGHLIGHTS</p>
+                        <textarea id="rare-skins" class="skins-textarea" rows="4"
+                            placeholder="List notable skins (e.g. Raven, Black Knight, Travis Scott, IKONIK, V-Bucks balance...)"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-listing-btn">
+                    <i class="fa-solid fa-paper-plane"></i> Submit Listing for Review
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="dz-footer reveal-right">
+        <div class="dz-footer-brand">
+            <i class="fa-solid fa-crosshairs"></i>
+            <span>DROPZONE MARKETPLACE</span>
+        </div>
+        <div class="dz-footer-disclaimer">
+            Not affiliated with Epic Games, Inc. All trademarks belong to their respective owners.
+        </div>
+    </footer>
 </body>
+
 </html>

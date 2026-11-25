@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+.menu-toggle,
+.burger-btn {
+    display: none;
+}
+
 @font-face {
     font-family: 'myfont';
     src: url('/static/fonts/Inter-18pt-Black.woff2') format('woff2');
@@ -12,7 +17,7 @@
 body {
     padding: 40px;
     min-height: 100vh;
-    background: linear-gradient(rgba(11, 14, 20, 0.743), rgba(11, 14, 20, 0.73)), url('background.jpg');
+    background: linear-gradient(rgba(11, 14, 20, 0.72), rgba(11, 14, 20, 0.45)), url('background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,22 +25,32 @@ body {
     font-family: 'myfont', sans-serif;
 }
 
-@keyframes fadeUpIn {
+/* მარჯვნიდან შემოსვლის ანიმაცია */
+@keyframes slideInRight {
     from {
         opacity: 0;
-        transform: translateY(24px);
+        transform: translateX(48px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
 
-.reveal-up {
+.reveal-right {
     opacity: 0;
-    animation: fadeUpIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: slideInRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+.card.reveal-right {
+    animation-delay: 0.08s;
+}
+
+.dz-footer.reveal-right {
+    animation-delay: 0.22s;
+}
+
+/* ნავიგაცია */
 nav {
     font-family: 'myfont', sans-serif;
     background-color: transparent;
@@ -52,6 +67,7 @@ nav {
     position: fixed;
     top: 40px;
     left: 40px;
+    z-index: 100;
 }
 
 .navbar-left img {
@@ -99,7 +115,7 @@ nav {
     color: white;
     flex-direction: column;
     font-size: 18px;
-    gap: 14px;
+    gap: 10px;
 }
 
 .category p {
@@ -113,7 +129,7 @@ nav {
 
 .categorytext {
     width: 280px;
-    height: 50px;
+    height: 46px;
     padding-left: 12px;
     justify-content: center;
     display: flex;
@@ -124,4 +140,309 @@ nav {
 
 .categorytext:hover {
     background-color: rgba(148, 163, 184, 0.2);
+}
+
+/* ძირითადი კონტეინერი და ბარათი */
+.container {
+    position: relative;
+    z-index: 1;
+    margin-left: 350px;
+    width: calc(100% - 350px);
+    min-width: 0;
+}
+
+.card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 32px;
+    border-radius: 24px;
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    backdrop-filter: blur(14px);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pirveliteqsti p {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    color: #34d399;
+    background: rgba(16, 185, 129, 0.14);
+    border: 1px solid rgba(52, 211, 153, 0.35);
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.title h1 {
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.title p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #cbd5e1;
+}
+
+/* ფორმის ველები */
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    min-width: 0;
+}
+
+.inp1,
+.inp2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    min-width: 0;
+}
+
+.inp3 {
+    width: 100%;
+    min-width: 0;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    min-width: 0;
+}
+
+.field p {
+    color: #cbd5e1;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.field input,
+.field select,
+.skins-textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 13px 16px;
+    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field select option {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.skins-textarea {
+    min-height: 110px;
+    resize: vertical;
+    overflow-wrap: anywhere;
+}
+
+.field input::placeholder,
+.skins-textarea::placeholder {
+    color: #64748b;
+}
+
+.field input:focus,
+.field select:focus,
+.skins-textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
+}
+
+.submit-listing-btn {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 22px;
+    border: none;
+    border-radius: 12px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 0 18px rgba(37, 99, 235, 0.45);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.submit-listing-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* ფუტერი */
+.dz-footer {
+    position: relative;
+    z-index: 2;
+    clear: both;
+    margin-top: 28px;
+    margin-left: 350px;
+    width: calc(100% - 350px);
+    padding: 16px 24px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.52);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.dz-footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+}
+
+.dz-footer-brand i {
+    color: #3b82f6;
+    font-size: 15px;
+}
+
+.dz-footer-disclaimer {
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* ===== მობილურზე / პლანშეტზე ===== */
+@media (max-width: 1024px) {
+    nav {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        margin-bottom: 16px !important;
+        z-index: 1000 !important;
+    }
+
+    .navbar-left {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        padding: 14px 18px !important;
+        border-radius: 15px !important;
+        background: rgba(15, 23, 42, 0.92) !important;
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        backdrop-filter: blur(14px) !important;
+    }
+
+    .navbar-left .home {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
+    }
+
+    .burger-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 42px !important;
+        height: 42px !important;
+        margin-left: auto !important;
+        border-radius: 10px !important;
+        background: rgba(30, 41, 59, 0.8) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        color: #ffffff !important;
+        font-size: 18px !important;
+        cursor: pointer !important;
+    }
+
+    .navbar-left .category {
+        display: none !important;
+        flex-direction: column !important;
+        padding-top: 14px !important;
+        border-top: 1px solid rgba(148, 163, 184, 0.25) !important;
+        margin-top: 14px !important;
+        gap: 8px !important;
+    }
+
+    .menu-toggle:checked + .navbar-left .category {
+        display: flex !important;
+    }
+
+    .categorytext {
+        width: 100% !important;
+        height: 44px !important;
+    }
+
+    .container,
+    .dz-footer {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .inp1,
+    .inp2 {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .submit-listing-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 14px;
+    }
+
+    .card {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .title h1 {
+        font-size: 24px;
+    }
+
+    .dz-footer {
+        border-radius: 18px;
+        padding: 14px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

@@ -14,7 +14,8 @@
 </head>
 
 <body>
-    <nav>
+  <nav>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <div class="navbar-left">
             <div class="home">
                 <div class="hometext">
@@ -24,36 +25,61 @@
                         <h6>LIVE</h6>
                     </div>
                 </div>
+                <label for="menu-toggle" class="burger-btn" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
             </div>
             <div class="category">
-                <div class="categorytext"><a href="index.html">
+                <div class="categorytext">
+                    <a href="index.html">
                         <p><i class="fa-solid fa-store"></i> Marketplace</p>
-                    </a></div>
-                <div class="categorytext"><a href="featured.html">
+                    </a>
+                </div>
+                <div class="categorytext">
+                    <a href="featured.html">
                         <p><i class="fa-solid fa-layer-group"></i> Featured Bundles</p>
-                    </a></div>
-                <div class="categorytext"><a href="sell.html">
+                    </a>
+                </div>
+                <div class="categorytext">
+                    <a href="sell.html">
                         <p><i class="fa-solid fa-tag"></i> Sell Account</p>
-                    </a></div>
-                <div class="categorytext"><a href="buy.html">
+                    </a>
+                </div>
+                <div class="categorytext">
+                    <a href="buy.html">
                         <p><i class="fa-solid fa-star"></i> Buyer Reviews</p>
-                    </a></div>
-                <div class="categorytext"><a href="how.html">
+                    </a>
+                </div>
+                <div class="categorytext">
+                    <a href="how.html">
                         <p><i class="fa-solid fa-route"></i> How It Works</p>
-                    </a></div>
-                <div class="categorytext"><a href="safety.html">
+                    </a>
+                </div>
+                <div class="categorytext">
+                    <a href="safety.html">
                         <p><i class="fa-solid fa-shield-halved"></i> Safety & Warranty</p>
-                    </a></div>
-                <div class="categorytext"><a href="faq.html">
+                    </a>
+                </div>
+                <div class="categorytext">
+                    <a href="faq.html">
                         <p><i class="fa-solid fa-circle-question"></i> FAQ</p>
-                    </a></div>
-                <div class="categorytext"><a href="support.html">
+                    </a>
+                </div>
+                <div class="categorytext">
+                    <a href="support.html">
                         <p><i class="fa-solid fa-headset"></i> Support</p>
-                    </a></div>
+                    </a>
+                </div>
+                <div class="categorytext">
+                    <a href="register.html">
+                        <p><i class="fa-solid fa-user-plus"></i> Register</p>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
-    <div class="featured">
+
+    <div class="featured reveal-up">
         <p><i class="fa-solid fa-inbox"></i>CURATED COMBO PACKS</p>
         <div class="text">
             <h2>Featured Collector & Duo Bundles</h2>
@@ -61,25 +87,60 @@
                 warranty coverage.</p>
         </div>
     </div>
+
     <div class="container">
-        <div class="card">
+        <div class="card reveal-up">
             <div class="pirvelixazi">
                 <p class="save">SAVE $35</p>
-                <p> <i class="fa-solid fa-check"></i>Founder Edition</p>
+                <p><i class="fa-solid fa-check"></i>Founder Edition</p>
             </div>
             <div class="texrcard">
-                <h2>Ultimate OG Vault + 5,000 V-Bucks  </h2 >
-                <p>Includes Black Knight, Raven, Sparkle Specialist, Mako Glider, plus 5,000 V-Bucks ready to spend on any platform.</p>
+                <h2>Ultimate OG Vault + 5,000 V-Bucks</h2>
+                <p>Includes Black Knight, Raven, Sparkle Specialist, Mako Glider, plus 5,000 V-Bucks ready to spend on
+                    any platform.</p>
+            </div>
+            <div class="foolprice">
+                <div class="cardprice">
+                    <p>$164.99</p>
+                    <h1>$129.99</h1>
+                </div>
+                <div class="cardbtn">
+                    <a href=""><button>Claim Bundle</button></a>
+                </div>
             </div>
         </div>
-        <div class="card card2">
+
+        <div class="card card2 reveal-up">
             <div class="pirvelixazi">
                 <p class="tounament">TOURNAMENT READY</p>
-                <P><i class="fa-solid fa-bolt"></i>instant Delivery</P>
-                    
+                <p><i class="fa-solid fa-bolt"></i>instant Delivery</p>
+            </div>
+            <div class="texrcard">
+                <h2>FNCS Comp Duo Starter + Pro Pickaxes</h2>
+                <p>Clean competitive account featuring Aura, Focus, Star Wand, Leviathan Axe, and zero prior
+                    tournament bans.</p>
+            </div>
+            <div class="foolprice">
+                <div class="cardprice">
+                    <p>$70.99</p>
+                    <h1>$59.99</h1>
+                </div>
+                <div class="cardbtn">
+                    <a href=""><button>Claim Bundle</button></a>
+                </div>
             </div>
         </div>
     </div>
+
+    <footer class="dz-footer reveal-up">
+        <div class="dz-footer-brand">
+            <i class="fa-solid fa-crosshairs"></i>
+            <span>DROPZONE MARKETPLACE</span>
+        </div>
+        <div class="dz-footer-disclaimer">
+            Not affiliated with Epic Games, Inc. All trademarks belong to their respective owners.
+        </div>
+    </footer>
 </body>
 
 </html>

@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    position: absolute;
+    margin-left: 350px;
+    color: white;
+}
+
+.card {
+    width: 1100px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    height: 600px;
+
+   .pirveliteqsti p {
+        color: #01f7a1;
+        background-color: #0d815868;
+        border: 1px solid #01f7a1;
+        width: 200px;
+
+        padding-inline: 10px;
+        border-radius: 20px;
+        background-color: ;
+    }
+    .title{
+        padding-top: 20px;
+    }
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.inp1,
+.inp2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    min-width: 0;
+}
+
+.inp3 {
+    width: 100%;
+    min-width: 0;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    min-width: 0;
+}
+
+.field p {
+    color: #cbd5e1;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.field input,
+.field select,
+.skins-textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 13px 16px;
+    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field select option {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.skins-textarea {
+    min-height: 110px;
+    resize: vertical;
+    overflow-wrap: anywhere;
+}
+
+.field input::placeholder,
+.skins-textarea::placeholder {
+    color: #64748b;
+}
+
+.field input:focus,
+.field select:focus,
+.skins-textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
+}
+
+.submit-listing-btn {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 22px;
+    border: none;
+    border-radius: 12px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 0 18px rgba(37, 99, 235, 0.45);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.submit-listing-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+

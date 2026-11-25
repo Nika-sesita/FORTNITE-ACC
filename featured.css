@@ -4,35 +4,72 @@
     box-sizing: border-box;
 }
 
+.menu-toggle,
+.burger-btn {
+    display: none;
+}
+
+@keyframes fadeUpIn {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal-up {
+    opacity: 0;
+    animation: fadeUpIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.featured.reveal-up {
+    animation-delay: 0.08s;
+}
+
+.container .card:nth-child(1) {
+    animation-delay: 0.20s;
+}
+
+.container .card:nth-child(2) {
+    animation-delay: 0.32s;
+}
+
+.dz-footer.reveal-up {
+    animation-delay: 0.44s;
+}
+
 .featured {
     margin-left: 350px;
-
-    align-items: center;
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
     padding: 30px;
     border-radius: 16px;
     backdrop-filter: blur(2px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    height: 170px;
+    min-height: 170px;
     background-color: rgba(22, 27, 41, 0.85);
     color: white;
-    animation-delay: 0.08s;
-
 }
 
 .featured p:nth-child(1) {
     color: rgb(203, 168, 245);
-    padding-inline: 20px;
+    padding: 6px 20px;
     border-radius: 20px;
-
-    width: 270px;
+    width: fit-content;
+    max-width: 100%;
     background-color: rgba(38, 30, 56, 0.85);
     border: 1px solid rgba(168, 85, 247, 0.35);
 }
 
 .featured .text {
-    padding-top: 40px;
+    padding-top: 12px;
     font-size: 15px;
+    line-height: 1.5;
 }
 
 .container {
@@ -45,52 +82,254 @@
 }
 
 .card {
-    width: 800px;
-    height: 250px;
+    flex: 1;
+    min-width: 0;
+    min-height: 250px;
     border: 1px solid rgba(168, 85, 247, 0.35);
     padding: 30px;
     border-radius: 20px;
-    .texrcard{
-        display: flex;
-        flex-direction: column;
-        border-bottom: 3px solid rgba(255, 255, 255, 0.08);
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.container .card:nth-child(2){
+
+.card .texrcard {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.08);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.card .foolprice {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.card .foolprice button {
+    width: 120px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgb(76, 155, 244);
+    font-size: 15px;
+    color: white;
+    background-color: rgb(76, 155, 244);
+    flex-shrink: 0;
+}
+
+.card .cardprice p {
+    font-size: 14px;
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.562);
+}
+
+.container .card:nth-child(2) {
     border: 1px solid rgb(147, 197, 253);
 }
 
 .pirvelixazi {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
 
-    .save {
-        background-color: rgba(203, 168, 245, 0.188);;
-        color: rgb(203, 168, 245);
-        font-size: 15px;
-        text-align: center;
-        align-items: center;
-        display: flex;
-        padding-inline: 20px;
-        border: 2px solid rgba(168, 85, 247, 0.35);
-        border-radius: 20px;
+.pirvelixazi .save {
+    background-color: rgba(203, 168, 245, 0.188);
+    color: rgb(203, 168, 245);
+    font-size: 15px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    padding: 6px 20px;
+    border: 2px solid rgba(168, 85, 247, 0.35);
+    border-radius: 20px;
+}
 
+.pirvelixazi .tounament {
+    background-color: rgba(30, 58, 138, 0.45);
+    color: rgb(147, 197, 253);
+    font-size: 15px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    padding: 6px 20px;
+    border: 2px solid rgba(147, 197, 253, 0.25);
+    border-radius: 20px;
+}
+
+.pirvelixazi p {
+    color: #34D399;
+}
+
+.dz-footer {
+    margin-top: 20px;
+    margin-left: 350px;
+    padding: 16px 24px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.52);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.dz-footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+}
+
+.dz-footer-brand i {
+    color: #3b82f6;
+    font-size: 15px;
+}
+
+.dz-footer-disclaimer {
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* ===== ტელეფონისა და პლანშეტის ზედა ბარი (☰) ===== */
+@media (max-width: 1024px) {
+    nav {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        margin-bottom: 16px !important;
+        z-index: 1000 !important;
     }
-    .tounament{
-         background-color: rgba(30, 58, 138, 0.45);
-        color:rgb(147, 197, 253);
-        font-size: 15px;
-        text-align: center;
+
+    .navbar-left {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        padding: 14px 18px !important;
+        border-radius: 15px !important;
+        background: rgba(15, 23, 42, 0.92) !important;
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        backdrop-filter: blur(14px) !important;
+    }
+
+    .navbar-left .home {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
+    }
+
+    .burger-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 42px !important;
+        height: 42px !important;
+        margin-left: auto !important;
+        border-radius: 10px !important;
+        background: rgba(30, 41, 59, 0.8) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        color: #ffffff !important;
+        font-size: 18px !important;
+        cursor: pointer !important;
+    }
+
+    .navbar-left .category {
+        display: none !important;
+        flex-direction: column !important;
+        padding-top: 14px !important;
+        border-top: 1px solid rgba(148, 163, 184, 0.25) !important;
+        margin-top: 14px !important;
+        gap: 8px !important;
+    }
+
+    .menu-toggle:checked + .navbar-left .category {
+        display: flex !important;
+    }
+
+    .categorytext {
+        width: 100% !important;
+        height: 44px !important;
+    }
+
+    .featured,
+    .container,
+    .dz-footer {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    .container {
+        flex-direction: column !important;
+    }
+
+    .card {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 14px;
+    }
+
+    .featured,
+    .card {
+        padding: 18px;
+    }
+
+    .featured p:nth-child(1) {
+        font-size: 12px;
+        padding: 6px 14px;
+    }
+
+    .featured .text {
+        padding-top: 8px;
+        font-size: 14px;
+    }
+
+    .container {
+        padding-top: 18px;
+        gap: 16px;
+    }
+
+    .pirvelixazi .save,
+    .pirvelixazi .tounament {
+        font-size: 13px;
+        padding: 5px 14px;
+    }
+
+    .card .foolprice {
+        flex-wrap: wrap;
+        gap: 12px;
         align-items: center;
-        display: flex;
-        padding-inline: 20px;
-        border: 2px solid rgba(147, 197, 253, 0.25);
-        border-radius: 20px;
     }
-    
-    p {
-        color: #34D399  ;
+
+    .card .foolprice button {
+        width: 100%;
+    }
+
+    .dz-footer {
+        border-radius: 18px;
+        padding: 14px 16px;
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
