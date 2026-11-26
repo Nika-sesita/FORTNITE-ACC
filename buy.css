@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.topcard {
+    margin-left: 350px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    border: 1px solid black;
+    padding-top: 40px;
+    height: 140px;
+    border-radius: 20px;
+    background: #171d27b3;
+    padding-inline: 20px;
+
+    .text {
+        p {
+            font-size: 15px;
+        }
+
+
+
+    }
+
+    .stars {
+        border: 1px solid #FBBF24;
+        height: 70px;
+        text-align: center;
+        padding-top: 20px;
+        width: 200px;
+        border-radius: 20px;
+        flex-direction: column;
+
+    }
+
+    .fa-star {
+
+        color: #FBBF24;
+
+    }
+}
